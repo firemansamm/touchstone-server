@@ -13,25 +13,10 @@
         <script src="js/app.js"></script>
     </head>
     <body>
-        <div class="modal modal-sm" id="qrModal">
-            <a href="#close" class="modal-overlay" aria-label="Close" onclick="qrClose()"></a>
-            <div class="modal-container">
-                <div class="modal-header">
-                    <a href="#close" class="btn btn-clear float-right" onclick="qrClose()" aria-label="Close"></a>
-                    <div class="modal-title h5">Pairing Code</div>
-                </div>
-                <div class="modal-body">
-                    <div class="content" style="text-align:center">
-                        <div id="qrcode"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <header class="navbar">
             <section class="navbar-section">
                 <a href="index.php" class="navbar-brand mr-2">Touchstone Management</a>
                 <a href="devices.php" class="btn btn-link">Devices</a>
-                <a href="messages.php" class="btn btn-link">Messages</a>
             </section>
             <section class="navbar-section">
                 <a href="admin.php" class="btn btn-link">Admin</a>

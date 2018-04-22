@@ -18,4 +18,41 @@
 	<tr><td colspan="2" style="text-align:center"><a href="#" onclick="addUser()"><i class="icon icon-plus"></i> Add new user...</a></td></tr>
 
 </table>
+<div class="modal" id="passwordModal">
+    <a href="#close" class="modal-overlay" aria-label="Close" onclick="passwordClose()"></a>
+    <div class="modal-container">
+        <div class="modal-header">
+            <a href="#close" class="btn btn-clear float-right" onclick="passwordClose()" aria-label="Close"></a>
+            <div class="modal-title h5">Reset Password</div>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <input class="form-input" type="text" id="input-un" disabled name="username" placeholder="Username">
+                <input class="form-input" type="password" id="input-pw" name="password" placeholder="New Password">
+            </div>
+        </div>
+        <div class="modal-footer">
+	    	<button class="btn btn-primary" onclick="updateUser()">Update</button>
+	    </div>
+    </div>
+</div>
+
+<div class="modal" id="newModal">
+    <a href="#close" class="modal-overlay" aria-label="Close" onclick="newClose()"></a>
+    <div class="modal-container">
+        <div class="modal-header">
+            <a href="#close" class="btn btn-clear float-right" onclick="newClose()" aria-label="Close"></a>
+            <div class="modal-title h5">New User</div>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <input class="form-input" type="text" id="input-un-b" name="username" placeholder="Username">
+                <input class="form-input" type="password" id="input-pw-b" name="password" placeholder="New Password">
+            </div>
+        </div>
+        <div class="modal-footer">
+	    	<button class="btn btn-primary" onclick="createUser()">Create</button>
+	    </div>
+    </div>
+</div>
 <?php include("bottom.php"); ?>
