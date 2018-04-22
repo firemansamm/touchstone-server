@@ -26,7 +26,8 @@ function updateUser(){
 		username: un,
 		password: pw
 	}, (data) => {
-		if(data.success) passwordClose();
+		if(data.success) {location.reload(); passwordClose();}
+		else alert(data.err);
 	});
 }
 
@@ -48,9 +49,13 @@ function createUser(){
 		username: un,
 		password: pw
 	}, (data) => {
-		if(data.success) newClose();
+		if(data.success) {location.reload(); newClose();}
 		else alert(data.err);
 	});
+}
+
+function deleteUser(user){
+	invokeConfirmation("delete", user);
 }
 
 var pendingAction = "";
@@ -82,6 +87,17 @@ function confirmAction(){
 		target: pendingTarget
 	}, (data) => {
 		if(data.success) confirmCancel();
+		else alert(data.err);
+	});
+}
+
+function confirmUserAction(){
+	$.post("update-user.php", {
+		action: pendingAction,
+		username: pendingTarget,
+		password: ""
+	}, (data) => {
+		if(data.success) {location.reload(); confirmCancel();}
 		else alert(data.err);
 	});
 }

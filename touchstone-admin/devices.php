@@ -1,4 +1,17 @@
 <?php include("top.php"); ?>
+
+<table class="table table-striped table-hover" id="device-table">
+    <?php include("devices-body.php"); ?>
+</table>
+<script type="text/javascript">
+    function reloadTable(){
+        $("#device-table").load("devices-body.php");
+    }
+    window.setInterval(reloadTable, 2000);
+</script>
+
+
+<!-- modals -->
 <div class="modal modal-sm" id="qrModal">
     <a href="#close" class="modal-overlay" aria-label="Close" onclick="qrClose()"></a>
     <div class="modal-container">
@@ -27,9 +40,9 @@
             </div>
         </div>
         <div class="modal-footer">
-	    	<button class="btn" onclick="confirmCancel()">No</button>
-	    	<button class="btn btn-error" onclick="confirmAction()">Yes</button>
-	    </div>
+            <button class="btn" onclick="confirmCancel()">No</button>
+            <button class="btn btn-error" onclick="confirmAction()">Yes</button>
+        </div>
     </div>
 </div>
 
@@ -46,19 +59,10 @@
             </div>
         </div>
         <div class="modal-footer">
-	    	<button class="btn" onclick="nameClose()">Cancel</button>
-	    	<button class="btn btn-primary" onclick="nameConfirm()">Update</button>
-	    </div>
+            <button class="btn" onclick="nameClose()">Cancel</button>
+            <button class="btn btn-primary" onclick="nameConfirm()">Update</button>
+        </div>
     </div>
 </div>
 
-<table class="table table-striped table-hover" id="device-table">
-    <?php include("devices-body.php"); ?>
-</table>
-<script type="text/javascript">
-    function reloadTable(){
-        $("#device-table").load("devices-body.php");
-    }
-    window.setInterval(reloadTable, 2000);
-</script>
 <?php include("bottom.php"); ?>
